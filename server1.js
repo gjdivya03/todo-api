@@ -16,12 +16,13 @@ var todos = [{
 	completed: true
 }];
 app.get('/', function(req, res) {
-	res.send('todo API root');
+	res.send('todo API root' );
 });
+
 
 app.get('/todos', function (req,res) {
 	res.json(todos);
-});
+})
 app.get('/todos/:id', function (req,res) {
 	var todoId = parseInt(req.params.id, 10);
 	var matchedTodo;
@@ -35,9 +36,9 @@ app.get('/todos/:id', function (req,res) {
 	} else {
 		res.status(404).send();
 	}
-	// res.send('asking for todo with id of' + req.params.id);
-});
+// 	res.send('asking for todo with id of' + req.params.id);
+// });
 
 app.listen(PORT, function () {
-	console.log('express listening on port' + PORT + '!');
+	console.log('express listening on port '  + PORT + '!');
 });
